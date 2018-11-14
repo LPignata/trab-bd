@@ -1,0 +1,390 @@
+<html><head>
+<title>Schema Report for database: mydb</title>
+<style>
+        td,th {
+        text-align:left;
+        vertical-align:middle;
+        }
+        table {
+        border-collapse: collapse;
+        border: 1px solid;
+        }
+        caption, th, td {
+        padding: .2em .8em;
+        border: 1px solid #000000;
+        }
+        caption {
+        background: #D3D3D3;
+        font-weight: bold;
+        font-size: 1.1em;
+        }
+        th {
+        font-weight: bold;
+        background: #000000;
+        color: white;
+        }
+        td {
+        background: #FFFFFF;
+        }
+        </style>
+      </head>
+     <body>
+<h1>Schema Report for database: mydb</h1>
+<a id="home">Table List </a><br /><ul>
+<li><a href="#piloto">piloto </a></li>
+<li><a href="#aluno">aluno </a></li>
+<li><a href="#filiacao">filiacao </a></li>
+<li><a href="#sexo">sexo </a></li>
+<li><a href="#estado_civil">estado_civil </a></li>
+<li><a href="#endereco">endereco </a></li>
+<li><a href="#telefone">telefone </a></li>
+<li><a href="#cidade">cidade </a></li>
+<li><a href="#estado">estado </a></li>
+<li><a href="#escolaridade">escolaridade </a></li>
+<li><a href="#cargo">cargo </a></li>
+<li><a href="#bairro">bairro </a></li>
+<li><a href="#curso">curso </a></li>
+<li><a href="#saida">saida </a></li>
+<li><a href="#instituicao">instituicao </a></li>
+<li><a href="#tipo_telefone">tipo_telefone </a></li>
+<li><a href="#tipo_endereco">tipo_endereco </a></li>
+<li><a href="#tipo_piloto">tipo_piloto </a></li>
+<li><a href="#piloto_tem_curso">piloto_tem_curso </a></li>
+<li><a href="#pais">pais </a></li>
+</ul>
+<a id="piloto"></a><table style="width:100%"><caption>Table: piloto </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros dos pilotos</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_piloto</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena a identificação do piloto</td></tr>
+<tr><td>cpf_piloto</td><td>VARCHAR(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o cpf do piloto</td></tr>
+<tr><td>breve_piloto</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o brevê do piloto</td></tr>
+<tr><td>nome_piloto</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do piloto</td></tr>
+<tr><td>email_piloto</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o email do piloto</td></tr>
+<tr><td>data_nascimento_piloto</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena a data de nascimento do piloto</td></tr>
+<tr><td>telefone_cod_telefone</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do telefone do piloto</td></tr>
+<tr><td>sexo_cod_sexo</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do sexo do piloto</td></tr>
+<tr><td>tipo_piloto_cod_tipo_piloto</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do tipo do piloto</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="aluno"></a><table style="width:100%"><caption>Table: aluno </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros dos alunos</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>mat_aluno</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena a matrícula do aluno</td></tr>
+<tr><td>cpf_aluno</td><td>VARCHAR(11)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o cpf do aluno</td></tr>
+<tr><td>rg_aluno</td><td>VARCHAR(7)</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o rg do aluno</td></tr>
+<tr><td>nome_aluno</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do aluno</td></tr>
+<tr><td>data_nascimento_aluno</td><td>DATE</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena a data de nascimento do aluno</td></tr>
+<tr><td>email_aluno</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o email do aluno</td></tr>
+<tr><td>filiacao_cod_filiacao</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência dos pais do aluno</td></tr>
+<tr><td>sexo_cod_sexo</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do sexo do aluno</td></tr>
+<tr><td>estado_civil_cod_estado_civil</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do estado civil do aluno</td></tr>
+<tr><td>cidade_cod_cidade</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência da naturalidade do aluno</td></tr>
+<tr><td>endereco_cod_endereco</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do endereço do aluno</td></tr>
+<tr><td>telefone_cod_telefone</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do telefone do aluno</td></tr>
+<tr><td>escolaridade_cod_escolaridade</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do grau de escolaridade do aluno</td></tr>
+<tr><td>cargo_cod_cargo</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do trabalho do aluno</td></tr>
+<tr><td>pais_cod_pais</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência da nacionalidade do aluno</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="filiacao"></a><table style="width:100%"><caption>Table: filiacao </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros de filiação</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_filiacao</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>nome_mae</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do pai</td></tr>
+<tr><td>nome_pai</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome da mãe</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="sexo"></a><table style="width:100%"><caption>Table: sexo </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros os sexos</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_sexo</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>desc_sexo</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do sexo</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="estado_civil"></a><table style="width:100%"><caption>Table: estado_civil </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros de estado civil</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_estado_civil</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>desc_estado_civil</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do estado civil</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="endereco"></a><table style="width:100%"><caption>Table: endereco </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros de endereço</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_endereco</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>num_endereco</td><td>INT</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o número do endereço</td></tr>
+<tr><td>complemento_endereco</td><td>VARCHAR(45)</td><td>No</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o complemento do endereço</td></tr>
+<tr><td>bairro_cod_bairro</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do bairro</td></tr>
+<tr><td>tipo_endereco_cod_tipo_endereco</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a refrência do tipo de endereço</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="telefone"></a><table style="width:100%"><caption>Table: telefone </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros dos telefones</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_telefone</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>ddd_telefone</td><td>INT</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o ddd do telefone</td></tr>
+<tr><td>num_telefone</td><td>INT</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o número do telefone</td></tr>
+<tr><td>tipo_telefone_cod_tipo_telefone</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do tipo do telefone</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="cidade"></a><table style="width:100%"><caption>Table: cidade </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros das cidades</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_cidade</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>nome_cidade</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome da cidade</td></tr>
+<tr><td>estado_cod_estado</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do estado</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="estado"></a><table style="width:100%"><caption>Table: estado </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros dos estados</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_estado</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>nome_estado</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do estado</td></tr>
+<tr><td>sigla_estado</td><td>VARCHAR(2)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena a sigla do estado</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="escolaridade"></a><table style="width:100%"><caption>Table: escolaridade </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros do grau de escolaridade</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_escolaridade</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>desc_escolaridade</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o grau de escolaridade</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="cargo"></a><table style="width:100%"><caption>Table: cargo </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros dos cargos de trabalho</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_cargo</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>desc_cargo</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do cargo</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="bairro"></a><table style="width:100%"><caption>Table: bairro </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros de bairro</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_bairro</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>nome_bairro</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do bairro</td></tr>
+<tr><td>cidade_cod_cidade</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência da cidade</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="curso"></a><table style="width:100%"><caption>Table: curso </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros de curso</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_curso</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>nome_curso</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do curso</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="saida"></a><table style="width:100%"><caption>Table: saida </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros das saídas dos alunos</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_saida</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da saída</td></tr>
+<tr><td>hora_saida</td><td>DATETIME</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena a data e a hora da saída</td></tr>
+<tr><td>hora_chegada</td><td>DATETIME</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena a data e a hora da chegada</td></tr>
+<tr><td>parecer_saida</td><td>VARCHAR(256)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o parecer do instrutor</td></tr>
+<tr><td>piloto_cod_piloto</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do instrutor</td></tr>
+<tr><td>aluno_mat_aluno</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do aluno</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="instituicao"></a><table style="width:100%"><caption>Table: instituicao </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros das isntituições</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_instituicao</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>nome_instituicao</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome da instituição</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="tipo_telefone"></a><table style="width:100%"><caption>Table: tipo_telefone </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros dos tipos de telefone</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_tipo_telefone</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>desc_tipo_telefone</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o tipo do telefone</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="tipo_endereco"></a><table style="width:100%"><caption>Table: tipo_endereco </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros do tipo de endereço</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_tipo_endereco</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>desc_tipo_endereco</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o tipo de endereço</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="tipo_piloto"></a><table style="width:100%"><caption>Table: tipo_piloto </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros dos tipos de piloto</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_tipo_piloto</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>desc_tipo_piloto</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o tipo do piloto</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="piloto_tem_curso"></a><table style="width:100%"><caption>Table: piloto_tem_curso </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros os cursos que um piloto tem</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>piloto_cod_piloto</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do piloto</td></tr>
+<tr><td>curso_cod_curso</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência do curso</td></tr>
+<tr><td>instituicao_cod_instituicao</td><td>INT</td><td>Yes</td><td>Yes</td><td>Yes</td><td></td><td>Este atributo armazena a referência da instituição</td></tr>
+<tr><td>data_diploma</td><td>DATE</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena a data do diploma do curso</td></tr>
+</table><a href="#home">Table List </a></br>
+<a id="pais"></a><table style="width:100%"><caption>Table: pais </caption>
+<tr><td>Table Comments</td><td colspan="6">Esta entidade armazena os registros de nacionalidade</td></tr>
+<tr><td colspan="7">Columns</td></tr>
+        <tr>
+        <th>Name</th>
+        <th>Data Type</th>
+        <th>Nullable</th>
+        <th>PK</th>
+        <th>FK</th>
+        <th>Default</th>
+        <th>Comment</th>
+        </tr>
+<tr><td>cod_pais</td><td>INT</td><td>Yes</td><td>Yes</td><td>No</td><td></td><td>Este atributo armazena o identificador da tabela</td></tr>
+<tr><td>nome_pais</td><td>VARCHAR(45)</td><td>Yes</td><td>No</td><td>No</td><td></td><td>Este atributo armazena o nome do país</td></tr>
+</table><a href="#home">Table List </a></br>
+</body></html>
