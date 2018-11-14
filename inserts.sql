@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Nov-2018 às 16:38
+-- Generation Time: 14-Nov-2018 às 14:14
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.11
 
@@ -42,18 +42,19 @@ CREATE TABLE `aluno` (
   `endereco_cod_endereco` int(11) NOT NULL,
   `telefone_cod_telefone` int(11) NOT NULL,
   `escolaridade_cod_escolaridade` int(11) NOT NULL,
-  `cargo_cod_cargo` int(11) NOT NULL
+  `cargo_cod_cargo` int(11) NOT NULL,
+  `pais_cod_pais` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `aluno`
 --
 
-INSERT INTO `aluno` (`mat_aluno`, `cpf_aluno`, `rg_aluno`, `nome_aluno`, `data_nascimento_aluno`, `email_aluno`, `filiacao_cod_filiacao`, `sexo_cod_sexo`, `estado_civil_cod_estado_civil`, `cidade_cod_cidade`, `endereco_cod_endereco`, `telefone_cod_telefone`, `escolaridade_cod_escolaridade`, `cargo_cod_cargo`) VALUES
-(1, '15968759234', '5984627', 'Luiz Gonçalves', '1994-02-15', 'luiz@email.com', 3, 1, 1, 1, 4, 2, 3, 1),
-(2, '56823495613', '6584239', 'Maria da Silva', '1989-09-18', 'maria.silva@email.com', 4, 2, 2, 1, 3, 4, 3, 2),
-(3, '953648752', '6458923', 'Roberto Cavalcante', '1998-05-23', 'roberto@email.com', 2, 1, 1, 1, 2, 1, 2, 2),
-(4, '56874239102', '5961238', 'Maria do Rosário', '1984-11-12', 'maria.rosario@email.com', 1, 2, 4, 1, 1, 1, 6, 2);
+INSERT INTO `aluno` (`mat_aluno`, `cpf_aluno`, `rg_aluno`, `nome_aluno`, `data_nascimento_aluno`, `email_aluno`, `filiacao_cod_filiacao`, `sexo_cod_sexo`, `estado_civil_cod_estado_civil`, `cidade_cod_cidade`, `endereco_cod_endereco`, `telefone_cod_telefone`, `escolaridade_cod_escolaridade`, `cargo_cod_cargo`, `pais_cod_pais`) VALUES
+(1, '15968759234', '5984627', 'Luiz Gonçalves', '1994-02-15', 'luiz@email.com', 3, 1, 1, 1, 4, 2, 3, 1, 1),
+(2, '56823495613', '6584239', 'Maria da Silva', '1989-09-18', 'maria.silva@email.com', 4, 2, 2, 1, 3, 4, 3, 2, 1),
+(3, '953648752', '6458923', 'Roberto Cavalcante', '1998-05-23', 'roberto@email.com', 2, 1, 1, 1, 2, 1, 2, 2, 1),
+(4, '56874239102', '5961238', 'Maria do Rosário', '1984-11-12', 'maria.rosario@email.com', 1, 2, 4, 1, 1, 1, 6, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -303,6 +304,28 @@ INSERT INTO `instituicao` (`cod_instituicao`, `nome_instituicao`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `pais`
+--
+
+CREATE TABLE `pais` (
+  `cod_pais` int(11) NOT NULL,
+  `nome_pais` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pais`
+--
+
+INSERT INTO `pais` (`cod_pais`, `nome_pais`) VALUES
+(1, 'Brasil'),
+(2, 'Estados Unidos'),
+(3, 'Canadá'),
+(4, 'Argentina'),
+(5, 'Chile');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `piloto`
 --
 
@@ -484,7 +507,7 @@ INSERT INTO `tipo_telefone` (`cod_tipo_telefone`, `desc_tipo_telefone`) VALUES
 -- Indexes for table `aluno`
 --
 ALTER TABLE `aluno`
-  ADD PRIMARY KEY (`mat_aluno`,`cpf_aluno`,`rg_aluno`,`filiacao_cod_filiacao`,`sexo_cod_sexo`,`estado_civil_cod_estado_civil`,`cidade_cod_cidade`,`endereco_cod_endereco`,`telefone_cod_telefone`,`escolaridade_cod_escolaridade`,`cargo_cod_cargo`),
+  ADD PRIMARY KEY (`mat_aluno`,`cpf_aluno`,`rg_aluno`,`filiacao_cod_filiacao`,`sexo_cod_sexo`,`estado_civil_cod_estado_civil`,`cidade_cod_cidade`,`endereco_cod_endereco`,`telefone_cod_telefone`,`escolaridade_cod_escolaridade`,`cargo_cod_cargo`,`pais_cod_pais`),
   ADD KEY `fk_aluno_filiacao1` (`filiacao_cod_filiacao`),
   ADD KEY `fk_aluno_sexo1` (`sexo_cod_sexo`),
   ADD KEY `fk_aluno_estado_civil1` (`estado_civil_cod_estado_civil`),
@@ -492,7 +515,8 @@ ALTER TABLE `aluno`
   ADD KEY `fk_aluno_endereco1` (`endereco_cod_endereco`),
   ADD KEY `fk_aluno_telefone1` (`telefone_cod_telefone`),
   ADD KEY `fk_aluno_escolaridade1` (`escolaridade_cod_escolaridade`),
-  ADD KEY `fk_aluno_cargo1` (`cargo_cod_cargo`);
+  ADD KEY `fk_aluno_cargo1` (`cargo_cod_cargo`),
+  ADD KEY `fk_aluno_pais1` (`pais_cod_pais`);
 
 --
 -- Indexes for table `bairro`
@@ -557,6 +581,12 @@ ALTER TABLE `filiacao`
 --
 ALTER TABLE `instituicao`
   ADD PRIMARY KEY (`cod_instituicao`);
+
+--
+-- Indexes for table `pais`
+--
+ALTER TABLE `pais`
+  ADD PRIMARY KEY (`cod_pais`);
 
 --
 -- Indexes for table `piloto`
@@ -685,6 +715,12 @@ ALTER TABLE `instituicao`
   MODIFY `cod_instituicao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `pais`
+--
+ALTER TABLE `pais`
+  MODIFY `cod_pais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `piloto`
 --
 ALTER TABLE `piloto`
@@ -740,6 +776,7 @@ ALTER TABLE `aluno`
   ADD CONSTRAINT `fk_aluno_escolaridade1` FOREIGN KEY (`escolaridade_cod_escolaridade`) REFERENCES `escolaridade` (`cod_escolaridade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aluno_estado_civil1` FOREIGN KEY (`estado_civil_cod_estado_civil`) REFERENCES `estado_civil` (`cod_estado_civil`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aluno_filiacao1` FOREIGN KEY (`filiacao_cod_filiacao`) REFERENCES `filiacao` (`cod_filiacao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_aluno_pais1` FOREIGN KEY (`pais_cod_pais`) REFERENCES `pais` (`cod_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aluno_sexo1` FOREIGN KEY (`sexo_cod_sexo`) REFERENCES `sexo` (`cod_sexo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aluno_telefone1` FOREIGN KEY (`telefone_cod_telefone`) REFERENCES `telefone` (`cod_telefone`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
